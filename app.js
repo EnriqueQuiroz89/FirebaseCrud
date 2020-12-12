@@ -38,5 +38,12 @@ console.error("Error adding docuemnt: ", error)
 
 }
 
+//leer datos
+db.collection("personas").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().first}`);
+    });
+});
+
 
  
