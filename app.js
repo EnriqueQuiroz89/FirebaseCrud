@@ -14,10 +14,12 @@ ocupamos el DOM */
 
   var nombre = document.getElementById('nombre').value;
   var apellido = document.getElementById('apellido').value;
-  var fecha = document.getElementById('fecha');
+  var fecha = document.getElementById('fecha').value;
 
  //aAgregar Documentos
- db.collection("user").add({
+ //Si tu quieres una nueva coleccion basta con cambiar el nombre
+
+ db.collection("personas").add({
     first: nombre,
     last: apellido,
     born: fecha        })
