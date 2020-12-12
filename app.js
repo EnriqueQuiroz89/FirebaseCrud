@@ -38,10 +38,26 @@ console.error("Error adding docuemnt: ", error)
 
 }
 
-//leer datos
+//leer documentos
+
+var tabla = document.getElementById('tabla');
+
+tabla.innerHTML= '';
+
 db.collection("personas").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().first}`);
+      
+        /**Aqui vamos ir pintado los docuemntos uno a uno */
+      tabla.innerHTML +=
+      `<tr>
+          <th scope="row">${doc.id}</th>
+          <td>${doc.data().first}</td>
+          <td>${doc.data().last}</td>
+          <td>${doc.data().born}</td>
+        </tr> `
+
+        
     });
 });
 
