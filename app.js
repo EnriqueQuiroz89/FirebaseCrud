@@ -43,8 +43,9 @@ console.error("Error adding docuemnt: ", error)
 var tabla = document.getElementById('tabla');
 
 tabla.innerHTML= '';
-
-db.collection("personas").get().then((querySnapshot) => {
+ /*Aqui se reemplazo el get() por snapshot()*/
+ /**Snapshot debe eeliminar el then*/
+ db.collection("personas").onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().first}`);
       
