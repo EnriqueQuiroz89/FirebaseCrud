@@ -14,13 +14,13 @@ ocupamos el DOM */
 
   var nombre = document.getElementById('nombre').value;
   var apellido = document.getElementById('apellido').value;
-  var fecha = document.getElementById('fecha').value;
+  var fecha = document.getElementById('fecha');
 
  //aAgregar Documentos
  db.collection("user").add({
-    first: "Leonel",
-    last: "Polar",
-    born: 1815        })
+    first: nombre,
+    last: apellido,
+    born: fecha        })
 .then(function(docRef){
   console.log("Document written ID ",docRef.id);                
                   })
