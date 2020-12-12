@@ -23,10 +23,16 @@ ocupamos el DOM */
     first: nombre,
     last: apellido,
     born: fecha        })
-.then(function(docRef){
-  console.log("Document written ID ",docRef.id);                
+.then(function(docRef){ /*Aqui se indica que pasara si hay exito*/
+
+  console.log("Document written ID ",docRef.id);
+  /**Limpiamos los campos de los input*/
+      document.getElementById('nombre').value='';
+      document.getElementById('apellido').value= '';
+      document.getElementById('fecha').value='';    
+  
                   })
-.catch(function(error){
+.catch(function(error){  /*Aqui se indica que pasara si hay falla*/
 console.error("Error adding docuemnt: ", error)
 });
 
